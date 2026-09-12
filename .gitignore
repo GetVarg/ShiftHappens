@@ -1,0 +1,45 @@
+# Ambiente e dependências
+.env
+*.env.local
+*.env.*.local
+
+# Dados sensíveis — não versionar
+data/*.csv
+data/subsidios/
+data/processos_exemplo/
+
+# Dependências de pacotes
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.next/
+.nuxt/
+
+# Outputs e artefatos
+*.log
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Modelos e checkpoints pesados
+*.bin
+*.pt
+*.ckpt
+*.safetensors
+*.gguf
+
+# Jupyter
+.ipynb_checkpoints/
