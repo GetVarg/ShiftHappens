@@ -1,14 +1,32 @@
-# Coloque aqui o código-fonte da sua solução.
+# Código-fonte da solução
 
-Não há restrição de linguagem ou tecnologia — use o que sua equipe domina melhor.
+A solução começa com uma API em FastAPI que recebe os documentos enviados pelo front-end e deixa pronta a camada de integração com a OpenAI.
 
-## Sugestões de organização
+## Organização atual
 
 ```
 src/
-├── policy/        # lógica da política de acordos (regras de decisão, sugestão de valor)
-├── interface/     # interface de acesso do advogado à recomendação
-└── utils/         # utilitários compartilhados
+└── app/
+    ├── main.py                  # aplicação FastAPI
+    ├── routes/
+    │   ├── intake.py            # entrada da pipeline documental
+    │   └── ai.py                # endpoint simples para OpenAI
+    ├── models/
+    │   └── documents.py         # tipos documentais aceitos
+    └── services/
+        ├── document_storage.py  # validação e armazenamento de PDFs
+        └── openai_chat.py       # interface isolada com a OpenAI
 ```
 
-> Sinta-se livre para reorganizar conforme a arquitetura da sua solução.
+Documentos aceitos na entrada da pipeline:
+
+- `autos_do_processo`
+- `contrato`
+- `extrato`
+- `comprovante_de_credito`
+- `dossie`
+- `demonstrativo_evolucao_divida`
+- `laudo_referenciado`
+
+O contrato e o prompt versionado para a extração estruturada estão em
+[`docs/document_extraction_contract.md`](../docs/document_extraction_contract.md).

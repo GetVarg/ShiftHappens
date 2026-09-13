@@ -7,6 +7,7 @@
 data/*.csv
 data/subsidios/
 data/processos_exemplo/
+data/uploads/
 
 # Dependências de pacotes
 node_modules/
